@@ -91,8 +91,7 @@
 </template>
 
 <script>
-import axios from 'axios'
-import { baseApiUrl } from '@/global'
+import api from '../../services/api'
 export default {
     data: () => ({
         dialog: false,
@@ -121,7 +120,7 @@ export default {
     },
     methods: {
         carregarLivros(){
-            axios(`${baseApiUrl}/api/livros/GetLivros`)
+            api(`api/livros/GetLivros`)
             .then(res => {
                 this.livros = res.data
             })
@@ -131,7 +130,7 @@ export default {
         },
         salvarLivro() {
             if (this.livroIndex > -1) {
-                axios.put(`${baseApiUrl}/api/livros/${this.livro.id}`,this.livro)
+                api.put(`api/livros/${this.livro.id}`,this.livro)
                 .then(() => {
                     this.carregarLivros()
                     this.close()
@@ -140,7 +139,7 @@ export default {
                     alert(err)
                 })
             }else {
-                axios.post(`${baseApiUrl}/api/livros`,this.livro)
+                api.post(`api/livros`,this.livro)
                 .then(() => {
                     this.carregarLivros()
                     this.close()
@@ -151,7 +150,7 @@ export default {
             }
         },
         deletarLivro(item) {
-            axios.delete(`${baseApiUrl}/api/livros/${item.id}`)
+            api.delete(`api/livros/${item.id}`)
             .then(() => {
                 this.carregarLivros()
             })
@@ -161,7 +160,7 @@ export default {
         },
         pesquisarLivro() {
             if(this.search){
-                axios(`${baseApiUrl}/api/livros/GetLivrosByTitulo?titulo=${this.search}`)
+                api(`api/livros/GetLivrosByTitulo?titulo=${this.search}`)
                 .then(res => {
                     this.livros = res.data
                 })

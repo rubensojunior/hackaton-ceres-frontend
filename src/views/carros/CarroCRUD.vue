@@ -85,8 +85,7 @@
 </template>
 
 <script>
-import axios from 'axios'
-import { baseApiUrl } from '@/global'
+import api from '../../services/api'
 export default {
     data: () => ({
         dialog: false,
@@ -114,7 +113,7 @@ export default {
     },
     methods: {
         carregarCarros(){
-            axios(`${baseApiUrl}/api/carros/GetCarros`)
+            api(`api/carros/GetCarros`)
             .then(res => {
                 this.carros = res.data
             })
@@ -124,7 +123,7 @@ export default {
         },
         salvarCarro() {
             if (this.carroIndex > -1) {
-                axios.put(`${baseApiUrl}/api/carros/${this.carro.id}`,this.carro)
+                api.put(`api/carros/${this.carro.id}`,this.carro)
                 .then(() => {
                     this.carregarCarros()
                     this.close()
@@ -133,7 +132,7 @@ export default {
                     alert(err)
                 })
             }else {
-                axios.post(`${baseApiUrl}/api/carros`,this.carro)
+                api.post(`api/carros`,this.carro)
                 .then(() => {
                     this.carregarCarros()
                     this.close()
@@ -144,7 +143,7 @@ export default {
             }
         },
         deletarCarro(item) {
-            axios.delete(`${baseApiUrl}/api/carros/${item.id}`)
+            api.delete(`api/carros/${item.id}`)
             .then(() => {
                 this.carregarCarros()
             })
@@ -154,7 +153,7 @@ export default {
         },
         pesquisarCarro() {
             if(this.search){
-                axios(`${baseApiUrl}/api/carros/GetCarrosByModelo?modelo=${this.search}`)
+                api(`api/carros/GetCarrosByModelo?modelo=${this.search}`)
                 .then(res => {
                     this.carros = res.data
                 })
