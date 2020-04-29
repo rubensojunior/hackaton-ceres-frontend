@@ -20,6 +20,8 @@ I Hackaton Ceres
 
 ## Features
 
+This is a frontend project made in vue.js.
+
 - List books.
 - Create books.
 - Update books.
