@@ -1,31 +1,44 @@
-# hackaton-frontend
+<h1 align="center">
+<br>
+I Hackaton Ceres
+</h1>
 
-This project is the frontend I used to teach a hackaton course. The theme of my class was "Consuming API'S Rest".
+<p align="center">This project was created to give a lecture about Vue.js in a hackaton. I created a project in Vue.js that used an api rest to show students.</p>
 
-## Project setup
-```
-npm install
-```
+<p align="center">
+  <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License MIT">
+  </a>
+</p>
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+<div>
+  <img src="repo/imgs/image1.png" alt="demo" height="425">
+  <img src="repo/imgs/image2.png" alt="demo" height="425">
+</div>
 
-### Compiles and minifies for production
-```
-npm run build
-```
+<hr />
 
-### Run your tests
-```
-npm run test
-```
+## Features
 
-### Lints and fixes files
-```
-npm run lint
-```
+- List books.
+- Create books.
+- Update books.
+- Delete books.
+- List cars.
+- Create cars.
+- Update cars.
+- Delete cars.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Getting started
+
+- Clone project > enter the project folder
+- run `yarn`
+- run `yarn serve`
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/licenses/MIT) page for details.
+
+---
+
+Created with passion by me 👨🏻‍💻
